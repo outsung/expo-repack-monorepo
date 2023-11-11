@@ -1,44 +1,19 @@
 {
-  "name": "xam",
-  "version": "1.0.0",
-  "main": "index.js",
+  "name": "xam-app-monorepo",
+  "version": "0.0.0",
+  "private": true,
+  "packageManager": "pnpm@8.7.4",
   "scripts": {
-    "dev": "expo start",
-    "dev:webpack": "react-native webpack-start",
-    "android": "expo run:android",
-    "ios": "expo run:ios",
-    "web": "expo start --web",
-    "build:local:simulator": "eas build --profile local:simulator --platform ios",
-    "build:local": "eas build --profile local",
-    "build:dev": "eas build --profile dev",
-    "build:stage": "eas build --profile stage",
-    "build:production": "eas build --profile production",
-    "build:ios": "react-native webpack-bundle --platform ios --entry-file index.tsx --dev false",
-    "build:android": "react-native webpack-bundle --platform android --entry-file index.tsx --dev false",
-    "prebuild": "expo prebuild",
-    "lint": "eslint ."
-  },
-  "dependencies": {
-    "expo": "~49.0.15",
-    "expo-dev-client": "~2.4.12",
-    "expo-splash-screen": "~0.20.5",
-    "expo-status-bar": "~1.6.0",
-    "expo-updates": "~0.18.17",
-    "react": "18.2.0",
-    "react-native": "0.72.6"
+    "lint": "turbo lint",
+    "build": "turbo run build",
+    "start": "turbo run start",
+    "dev": "turbo run dev --parallel",
+    "cleanup:mac": "find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +",
+    "cleanup:win": "npx rimraf --glob **/node_modules"
   },
   "devDependencies": {
-    "@babel/core": "^7.20.0",
-    "@callstack/repack": "^3.6.0",
-    "@types/react": "~18.2.14",
-    "babel-loader": "^9.1.3",
-    "eslint": "^8.53.0",
-    "eslint-config-universe": "^12.0.0",
-    "metro-react-native-babel-preset": "^0.77.0",
-    "prettier": "^3.0.3",
-    "terser-webpack-plugin": "^5.3.9",
-    "typescript": "^5.1.3",
-    "webpack": "^5.89.0"
+    "turbo": "1.6.2",
+    "typescript": "^5.1.3"
   },
-  "private": true
+  "dependencies": {}
 }
