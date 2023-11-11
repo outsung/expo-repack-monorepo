@@ -22,7 +22,7 @@ export default (env) => {
   const {
     mode = "development",
     context = Repack.getDirname(import.meta.url),
-    entry = "./index.tsx",
+    entry = "./index.js",
     platform = process.env.PLATFORM,
     minimize = mode === "production",
     devServer = undefined,
@@ -155,6 +155,7 @@ export default (env) => {
             /node_modules(.*[/\\])+@react-navigation/,
             /node_modules(.*[/\\])+@react-native-community/,
             /node_modules(.*[/\\])+@expo/,
+            /node_modules(.*[/\\])+expo-modules-core/,
             /node_modules(.*[/\\])+pretty-format/,
             /node_modules(.*[/\\])+metro/,
             /node_modules(.*[/\\])+abort-controller/,
@@ -251,8 +252,14 @@ export default (env) => {
       new Repack.plugins.ModuleFederationPlugin({
         name: "host",
         shared: {
-          react: Repack.Federated.SHARED_REACT,
-          "react-native": Repack.Federated.SHARED_REACT_NATIVE,
+          react: {
+            ...Repack.Federated.SHARED_REACT,
+            requiredVersion: "18.2.0",
+          },
+          "react-native": {
+            ...Repack.Federated.SHARED_REACT_NATIVE,
+            requiredVersion: "0.72.6",
+          },
         },
       }),
     ],

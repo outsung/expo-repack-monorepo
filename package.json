@@ -1,6 +1,7 @@
 {
   "name": "xam",
   "version": "1.0.0",
+  "main": "index.js",
   "scripts": {
     "dev": "expo start",
     "dev:webpack": "react-native webpack-start",
@@ -33,6 +34,7 @@
     "babel-loader": "^9.1.3",
     "eslint": "^8.53.0",
     "eslint-config-universe": "^12.0.0",
+    "metro-react-native-babel-preset": "^0.77.0",
     "prettier": "^3.0.3",
     "terser-webpack-plugin": "^5.3.9",
     "typescript": "^5.1.3",
