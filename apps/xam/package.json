@@ -9,7 +9,9 @@
     "build:ios": "react-native webpack-bundle --platform ios --entry-file index.js --dev false",
     "build:android": "react-native webpack-bundle --platform android --entry-file index.js --dev false",
     "build:eas": "eas build",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "android": "expo run:android",
+    "ios": "expo run:ios"
   },
   "dependencies": {
     "expo": "~49.0.15",

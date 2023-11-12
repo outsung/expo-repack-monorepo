@@ -4,6 +4,7 @@ import { registerRootComponent } from "expo";
 import App from "./App";
 
 import { ScriptManager, Script, Federated } from "@callstack/repack/client";
+
 ScriptManager.shared.addResolver(async (scriptId, caller) => {
   console.log("call Resolver : ", scriptId, caller);
 
