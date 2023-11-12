@@ -3,35 +3,35 @@ import { registerRootComponent } from "expo";
 
 import App from "./App";
 
-// import { ScriptManager, Script, Federated } from "@callstack/repack/client";
-// ScriptManager.shared.addResolver(async (scriptId, caller) => {
-//   const resolveURL = Federated.createURLResolver({
-//     containers: {
-//       app1: "http://localhost:9000/[name][ext]",
-//       app2: "http://localhost:9001/[name][ext]",
-//       module1: "http://localhost:9002/[name][ext]",
-//     },
-//   });
+import { ScriptManager, Script, Federated } from "@callstack/repack/client";
+ScriptManager.shared.addResolver(async (scriptId, caller) => {
+  console.log("call Resolver : ", scriptId, caller);
 
-//   let url;
-//   if (caller === "main") {
-//     url = Script.getDevServerURL(scriptId);
-//   } else {
-//     url = resolveURL(scriptId, caller);
-//   }
+  const resolveURL = Federated.createURLResolver({
+    containers: {
+      notice: "http://192.168.35.68:9001/[name][ext]",
+    },
+  });
 
-//   if (!url) {
-//     return undefined;
-//   }
+  let url;
+  if (caller === "main") {
+    url = Script.getDevServerURL(scriptId);
+  } else {
+    url = resolveURL(scriptId, caller);
+  }
 
-//   return {
-//     url,
-//     cache: false, // For development
-//     query: {
-//       platform: Platform.OS,
-//     },
-//   };
-// });
+  if (!url) {
+    return undefined;
+  }
+
+  return {
+    url,
+    cache: false, // For development
+    query: {
+      platform: Platform.OS,
+    },
+  };
+});
 
 // registerRootComponent calls AppRegistry.registerComponent('main', () => App);
 // It also ensures that whether you load the app in the Expo client or in a native build,

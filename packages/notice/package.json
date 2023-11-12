@@ -1,9 +1,10 @@
 {
-  "name": "xam",
+  "name": "notice",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "react-native webpack-start --host 192.168.35.68 --port 8888",
+    "dev": "react-native webpack-start --host 192.168.35.68 --port 9001",
+    "dev:standalone": "STANDALONE=1 react-native webpack-start --host 192.168.35.68 --port 8888",
     "prebuild": "expo prebuild",
     "build": "pnpm build:ios && pnpm build:android",
     "build:ios": "react-native webpack-bundle --platform ios --entry-file index.js --dev false",
@@ -13,10 +14,7 @@
   },
   "dependencies": {
     "expo": "~49.0.15",
-    "expo-dev-client": "~2.4.12",
-    "expo-splash-screen": "~0.20.5",
     "expo-status-bar": "~1.6.0",
-    "expo-updates": "~0.18.17",
     "react": "18.2.0",
     "react-native": "0.72.6"
   },
