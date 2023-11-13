@@ -37,6 +37,7 @@
     "updates": {
       "url": "https://u.expo.dev/857462cb-9736-4060-8573-b6eab99f0e99"
     },
-    "owner": "spotlight-xam"
+    "owner": "spotlight-xam",
+    "plugins": ["./plugin/app.plugin.js"]
   }
 }
