@@ -1,21 +1,20 @@
+import { ScriptManager, Script, Federated } from "@callstack/repack/client";
 import { Platform } from "react-native";
 import { registerRootComponent } from "expo";
 
 import App from "./App";
 
-import { ScriptManager, Script, Federated } from "@callstack/repack/client";
+const resolveURL = Federated.createURLResolver({
+  containers: {
+    app1: 'http://192.168.1.75:9000/[name][ext]',
+    app2: 'http://192.168.1.75:9001/[name][ext]',
+    module1: 'http://192.168.1.75:9002/[name][ext]',
+  },
+});
 
 ScriptManager.shared.addResolver(async (scriptId, caller) => {
-  console.log("call Resolver : ", scriptId, caller);
-
-  const resolveURL = Federated.createURLResolver({
-    containers: {
-      notice: "http://192.168.35.68:9001/[name][ext]",
-    },
-  });
-
   let url;
-  if (caller === "main") {
+  if (caller === 'main') {
     url = Script.getDevServerURL(scriptId);
   } else {
     url = resolveURL(scriptId, caller);
@@ -33,6 +32,7 @@ ScriptManager.shared.addResolver(async (scriptId, caller) => {
     },
   };
 });
+
 
 // registerRootComponent calls AppRegistry.registerComponent('main', () => App);
 // It also ensures that whether you load the app in the Expo client or in a native build,

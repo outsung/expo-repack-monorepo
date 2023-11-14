@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "xam",
-    "slug": "xam",
+    "name": "app2",
+    "slug": "app2",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -14,30 +14,29 @@
     "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.outsung.xam"
+      "bundleIdentifier": "com.outsung.app2"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.outsung.xam"
+      "package": "com.outsung.app2"
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
     "extra": {
       "eas": {
-        "projectId": "857462cb-9736-4060-8573-b6eab99f0e99"
+        "projectId": "5b2e3ca5-38b3-4eaf-8b4d-3f1d627deb49"
       }
     },
     "runtimeVersion": {
       "policy": "appVersion"
     },
     "updates": {
-      "url": "https://u.expo.dev/857462cb-9736-4060-8573-b6eab99f0e99"
+      "url": "https://u.expo.dev/5b2e3ca5-38b3-4eaf-8b4d-3f1d627deb49"
     },
-    "owner": "spotlight-xam",
     "plugins": ["./plugin/app.plugin.js"]
   }
 }

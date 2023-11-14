@@ -1,0 +1,30 @@
+{
+  "build": {
+    "local:simulator": {
+      "developmentClient": true,
+      "ios": { "simulator": true },
+      "env": { "APP_VARIANT": "local" },
+      "channel": "local"
+    },
+    "local": {
+      "developmentClient": true,
+      "distribution": "internal",
+      "env": { "APP_VARIANT": "local" },
+      "channel": "local"
+    },
+    "dev": {
+      "distribution": "internal",
+      "env": { "APP_VARIANT": "dev" },
+      "channel": "dev"
+    },
+    "stage": {
+      "env": { "APP_VARIANT": "stage" },
+      "android": { "buildType": "apk" },
+      "channel": "stage"
+    },
+    "production": {
+      "env": { "APP_VARIANT": "production" },
+      "channel": "production"
+    }
+  }
+}

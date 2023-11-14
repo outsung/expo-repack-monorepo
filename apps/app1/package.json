@@ -1,9 +1,10 @@
 {
-  "name": "xam",
+  "name": "app1",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "react-native webpack-start --host 192.168.35.68 --port 8888",
+    "dev": "react-native webpack-start --host 192.168.1.75 --port 9000",
+    "dev:standalone": "STANDALONE=1 react-native webpack-start --host 192.168.1.75 --port 8081",
     "prebuild": "expo prebuild",
     "build": "pnpm build:ios && pnpm build:android",
     "build:ios": "react-native webpack-bundle --platform ios --entry-file index.js --dev false",

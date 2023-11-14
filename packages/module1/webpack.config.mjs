@@ -251,9 +251,10 @@ export default (env) => {
       }),
 
       new Repack.plugins.ModuleFederationPlugin({
-        name: "notice",
+        name: "module1",
         exposes: {
-          "./App": "./App.tsx",
+          './Root': './src/components/Root.tsx',
+          './baz': './src/helpers/baz.ts',
         },
         shared: {
           react: {
@@ -266,6 +267,9 @@ export default (env) => {
             requiredVersion: "0.72.6",
             eager: STANDALONE,
           },
+        },
+        remotes: {
+          app1: 'app1@dynamic',
         },
       }),
     ],

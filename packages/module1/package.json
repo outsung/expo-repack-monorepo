@@ -1,0 +1,42 @@
+{
+  "name": "module1",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "react-native webpack-start --host 192.168.1.75 --port 9002",
+    "dev:standalone": "STANDALONE=1 react-native webpack-start --host 192.168.1.75 --port 8081",
+    "prebuild": "expo prebuild",
+    "build": "pnpm build:ios && pnpm build:android",
+    "build:ios": "react-native webpack-bundle --platform ios --entry-file index.js --dev false",
+    "build:android": "react-native webpack-bundle --platform android --entry-file index.js --dev false",
+    "build:eas": "eas build",
+    "lint": "eslint .",
+    "android": "expo run:android",
+    "ios": "expo run:ios"
+  },
+  "dependencies": {
+    "expo": "~49.0.15",
+    "expo-constants": "~14.4.2",
+    "expo-dev-client": "~2.4.12",
+    "expo-splash-screen": "~0.20.5",
+    "expo-status-bar": "~1.6.0",
+    "expo-updates": "~0.18.17",
+    "react": "18.2.0",
+    "react-native": "0.72.6"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.0",
+    "@callstack/repack": "^3.6.0",
+    "@types/react": "~18.2.14",
+    "babel-loader": "^9.1.3",
+    "eslint": "^8.53.0",
+    "eslint-config-universe": "^12.0.0",
+    "metro-react-native-babel-preset": "0.76.8",
+    "prettier": "^3.0.3",
+    "terser-webpack-plugin": "^5.3.9",
+    "typescript": "^5.1.3",
+    "webpack": "^5.89.0",
+    "xcparse": "^0.0.3"
+  },
+  "private": true
+}
