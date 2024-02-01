@@ -41,7 +41,7 @@ For a more example of without Expo please visit
 
 
 ## Issues
-- Plugin for Android not yet implemented
-- [Expo Updates](https://docs.expo.dev/versions/latest/sdk/updates/) is not working
+- ~~Plugin for Android not yet implemented~~ solved
+- ~~[Expo Updates](https://docs.expo.dev/versions/latest/sdk/updates/) is not working~~ solved
 
 
